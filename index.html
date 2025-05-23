@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite de Aniversário - Sabrina 23 Anos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #2D3436;
+            --light: #FDFFFC;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F7F9FC;
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255,230,109,0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(78,205,196,0.1) 0%, transparent 20%);
+        }
+        
+        .invitation {
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--light);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -10px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            min-height: 600px;
+        }
+        
+        .invitation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,107,107,0.05) 0%, rgba(78,205,196,0.05) 100%);
+            z-index: -1;
+        }
+        
+        .image-side {
+            background: 
+                linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            color: white;
+            position: relative;
+        }
+        
+        .image-side::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+        
+        .date-badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            align-self: flex-start;
+            box-shadow: 0 10px 20px rgba(255,107,107,0.3);
+        }
+        
+        .main-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: white;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .content-side {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title span {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .detail-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+        
+        .detail-emoji {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        .detail-text {
+            font-size: 0.9rem;
+        }
+        
+        .location {
+            background-color: var(--accent);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .location::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+        
+        .location-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .location-title span {
+            margin-right: 8px;
+        }
+        
+        .gift-note {
+            background-color: rgba(78,205,196,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary);
+            margin-top: auto;
+        }
+        
+        .gift-note p {
+            margin-bottom: 10px;
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-top: 20px;
+            text-align: right;
+        }
+        
+        @media (max-width: 768px) {
+            .invitation {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-side {
+                min-height: 300px;
+            }
+            
+            .details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation">
+        <div class="image-side">
+            <div class="date-badge">25 DE MAIO • 11H</div>
+            <h1 class="main-title">Meus 23 Anos<br>de Verão Eterno</h1>
+        </div>
+        
+        <div class="content-side">
+            <div class="section">
+                <h2 class="section-title"><span>🎉</span> Celebre Comigo!</h2>
+                <p>Vamos comemorar meus 23 anos com muita alegria, comida deliciosa e aquele sol que aquece a alma!</p>
+                
+                <div class="location">
+                    <h3 class="location-title"><span>📍</span> Restaurante novo Prainha Bar e Grill</h3>
+                    <p>Av. Atlântica, 4000 – Interlagos</p>
+                    <p>Cenário perfeito para fotos dignas de feed tropical! 🌴📸</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><span>✨</span> O Que Te Espera</h2>
+                <div class="details">
+                    <div class="detail-item">
+                        <div class="detail-emoji">🍽️</div>
+                        <div class="detail-text">Pratos a partir de R$39 e porções para compartilhar</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-emoji">🍹</div>
+                        <div class="detail-text">Drinks gelados e caipirinhas refrescantes</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-emoji">🌊</div>
+                        <div class="detail-text">Deck com vista para o lago e área de areia</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-emoji">📸</div>
+                        <div class="detail-text">Cantinhos perfeitos para fotos incríveis</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gift-note">
+                <p><strong>🎁 Sobre Presentes:</strong> Presença já é presente, mas se quiser colaborar com minha meta
+                     de ser um adulto
+                     funcional e feliz, pode trazer vibes boas, 
+                    risadas, e talvez uma porção extra de batata-frita. </p>
+            </div>
+            
+            <div class="signature">Layla Cristina 💛</div>
+        </div>
+    </div>
+</body>
+</html>
